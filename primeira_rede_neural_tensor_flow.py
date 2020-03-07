@@ -30,12 +30,12 @@ test_images = test_images / 255.0
 # Montando as camadas da rede neural
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)), # transforma o formato da imagem de um array de imagens de duas dimensões (of 28 by 28 pixels) para um array de uma dimensão (de 28 * 28 = 784 pixels). Essa camada não tem paramêtros para aprender; ela só reformata os dados.
-    keras.layers.Dense(128, activation='relu'), # Camada Dense tem 128 nós (ou neurônios).
+    keras.layers.Dense(128, activation='relu'), # Camada totalmente conectada com 128 nós (ou neurônios).
     keras.layers.Dense(10, activation='softmax') # É uma softmax de 10 nós que retorna um array de 10 probabilidades, cuja soma resulta em 1. Cada nó contem um valor que indica a probabilidade de que aquela imagem pertence a uma das 10 classes.
 ])
 
 model.compile(optimizer='adam', # Isso é como o modelo se atualiza com base no dado que ele vê e sua função loss.
-              loss='sparse_categorical_crossentropy', # Essa mede quão precisa o modelo é durante o treinamento. Queremos minimizar a função para guiar o modelo para direção certa.
+              loss=tf.keras.losses.sparse_categorical_crossentropy, # Essa mede quão precisa o modelo é durante o treinamento. Queremos minimizar a função para guiar o modelo para direção certa.
               metrics=['accuracy']) # usadas para monitorar os passos de treinamento e teste. O exemplo abaixo usa a acurácia, a fração das imagens que foram classificadas corretamente.
 
 model.fit(train_images, train_labels, epochs=10) # Encaixa o modelo no conjunto de treinamento
