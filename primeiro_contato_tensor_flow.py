@@ -1,4 +1,6 @@
 import tensorflow as tf
+import numpy as np
+
 
 myGraph = tf.Graph()
 # Constroi um grafo simples e faz a soma de seus valores
@@ -8,6 +10,7 @@ z = tf.add(x1, x2)
 # Controi uma matriz de 3 colunas e 2 linhas com valores 0
 a = tf.zeros((2, 3))
 
-with tf.Session() as sess:
-  print(z.eval())
-  print(a.eval())
+print(x1.numpy())
+print(x2.numpy())
+print(z.numpy())
+print(a.numpy())
