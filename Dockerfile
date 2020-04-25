@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.6.10-buster
 ARG RUN_FILE=primeiro_contato_tensor_flow.py
 ENV FILE_NAME=$RUN_FILE
 COPY . .
