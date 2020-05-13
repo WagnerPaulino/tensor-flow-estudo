@@ -1,4 +1,4 @@
-FROM python:3.6.10-buster
+FROM tensorflow/tensorflow:devel-gpu
 ARG RUN_FILE=primeiro_contato_tensor_flow.py
 ENV FILE_NAME=$RUN_FILE
 COPY . .
