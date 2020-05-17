@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:devel-gpu
+FROM tensorflow/tensorflow:latest-gpu-jupyter
 ARG RUN_FILE=primeiro_contato_tensor_flow.py
 ENV FILE_NAME=$RUN_FILE
 COPY . .
