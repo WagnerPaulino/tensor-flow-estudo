@@ -5,3 +5,5 @@ tensorflow_hub>=0.8,<1
 tensorflow_datasets==3
 pandas>=0,<=1
 git+https://github.com/tensorflow/docs
+sklearn
+scipy
